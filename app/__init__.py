@@ -8,7 +8,7 @@ def create_app():
     db.init_app(app)
     jwt.init_app(app)
 
-    #from app.auth.routes import auth_bp
-    #app.register.bluerint(auth_bp, url_prefix='/auth')
+    from app.auth.routes import auth_bp
+    app.register_blueprint(auth_bp, url_prefix='/auth')
 
     return app
