@@ -5,8 +5,8 @@ from app.auth.services import register_user
 
 auth_bp = Blueprint('auth',__name__)
 
-auth_bp.route('/register',methods=['POST'])
-def registration(request):
+@auth_bp.route('/register',methods=['POST'])
+def registration():
     data = request.json
     user = register_user(data['email'],data['password'])
 
@@ -15,7 +15,7 @@ def registration(request):
 
     return jsonify({'message':'User registered Successfully'}), 201
 
-auth_bp.route('/login',methods=['POST'])
+@auth_bp.route('/login',methods=['POST'])
 def login():
     data = request.json
     user = User.query.filter_by(email=data['email']).first()
