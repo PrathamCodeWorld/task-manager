@@ -1,9 +1,9 @@
 from flask_jwt_extended import jwt_required , get_jwt_identity
 from flask import request
 from app.auth.models import User
-from tasks.models import Task
+from app.tasks.models import Task
 from app.extensions import db
-from tasks import tasks_bp
+from app.tasks import tasks_bp
 
 @tasks_bp.route('',methods=['POST'])
 @jwt_required()

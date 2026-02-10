@@ -2,6 +2,6 @@ from flask import Blueprint
 
 tasks_bp = Blueprint("tasks",__name__)
 
-from tasks import routes
+from app.tasks import routes
 
-from tasks.models import Task
+from app.tasks.models import Task
